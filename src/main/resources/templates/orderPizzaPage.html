@@ -13,7 +13,7 @@
                      th:text="${ingredient.name} + ${stat.last ? '' : ', '}"></span></p>
             <p th:text="|${pizza.price}zł|"></p>
         </div>
-        <form class="uk-grid-small uk-margin" th:object="${orderAddress}" uk-grid>
+        <form class="uk-grid-small uk-margin" th:object="${orderAddress}" uk-grid method="post" th:href="@{/menu/order/{pizzaId}(pizzaId=${pizza.id})}">
             <div class="uk-width-1-2">
                 <input class="uk-input" type="text"  placeholder="Imię" th:field="*{firstName}">
             </div>

@@ -2,12 +2,10 @@ package pl.wszib.pizzamarket.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.wszib.pizzamarket.data.entities.PizzaEntity;
 import pl.wszib.pizzamarket.data.repositories.PizzaRepository;
+import pl.wszib.pizzamarket.services.OrderService;
 import pl.wszib.pizzamarket.web.models.OrderAddressModel;
 
 import javax.persistence.EntityNotFoundException;
@@ -18,9 +16,11 @@ import java.util.List;
 public class MenuController {
 
     private final PizzaRepository pizzaRepository;
+    private final OrderService orderService;
 
-    public MenuController(PizzaRepository pizzaRepository) {
+    public MenuController(PizzaRepository pizzaRepository, OrderService orderService) {
         this.pizzaRepository = pizzaRepository;
+        this.orderService = orderService;
     }
 
     @GetMapping
@@ -40,4 +40,14 @@ public class MenuController {
         return "orderPizzaPage";
     }
 
+    @PostMapping("order/{pizzaId}")
+    public String processPizzaOrder(
+            @PathVariable Long pizzaId,
+            @ModelAttribute("orderAddress") OrderAddressModel orderAddress
+    ) {
+
+    orderService.saveOrder(pizzaId, orderAddress);
+        return "redirect:/menu";
+
+    }
 }
