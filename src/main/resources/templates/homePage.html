@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Market</title>
+
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+
+    <script th:src="@{/js/uikit.min.js}"></script>
+    <script th:src="@{/js/fontawesome.min.js}"></script>
+    <script th:src="@{/js/uikit-icons.min.js}"></script>
+
+</head>
+<body>
+
+<div class="uk-container uk-container-large">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <a th:href="@{/}" class="uk-logo uk-navbar-item"><i class="fa-solid fa-pizza-slice"></i>Pizza</a>
+                <li><a th:href="@{/menu}">Menu</a></li>
+                <li><a th:href="@{/delivery}">Dostawa</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="uk-section">
+        <div class="uk-container uk-container-small">
+            <div class="uk-cover-container uk-height-medium uk-margin-small">
+                <img th:src="@{/img/home1.jpg}" alt="">
+            </div>
+            <article class="uk-article uk-margin-large uk-text-center">
+                <h1 class="uk-article-title">Pizza neapolitańska</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cum delectus deleniti ducimus
+                    enim eum harum id itaque labore molestias non, officia perspiciatis praesentium provident quae
+                    quibusdam ratione rem similique temporibus tenetur? Ad asperiores aut commodi delectus deleniti
+                    dicta dignissimos dolores ea eius facilis, illum inventore magni necessitatibus neque nobis nulla
+                    optio placeat rem temporibus vel veniam voluptas, voluptate. Assumenda cum deserunt dicta doloremque
+                    ea, explicabo iste laboriosam laborum nobis non perferendis possimus quae quibusdam quisquam rerum
+                    saepe sed tempora vel. Aliquam atque dolores earum, error fuga illo illum, nihil nulla officia omnis
+                    quaerat reiciendis sint temporibus unde veniam, voluptates.
+                </p>
+                <a class="uk-button uk-button-primary uk-margin-large" th:href="@{/menu}">Sprawdź nasze menu</a>
+            </article>
+            <div class="uk-cover-container uk-height-medium uk-margin-small">
+                <img th:src="@{/img/home2.jpg}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
