@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: template (~{:: .uk-section})}">
+<head>
+    <title>Potwierdzenie zamówienia</title>
+</head>
+<body>
+
+<div class="uk-section">
+    <div class="uk-container uk-container-small">
+        <div class="uk-cover-container uk-height-small uk-margin-small">
+            <i class="fa-solid fa-truck-fast fa-8x uk-position-top-center"></i>
+        </div>
+        <article class="uk-article uk-margin-small uk-text-center uk-text-">
+            <h1 class="uk-article-title">Zamówienie już do</h1>
+            <h2 class="uk-article-title">Ciebie Jedzie!</h2>
+            <a class="uk-button uk-button-secondary uk-margin-large" th:href="@{/menu}">Powrót do menu</a>
+        </article>
+        <div class="uk-cover-container uk-height-medium uk-margin-small">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
