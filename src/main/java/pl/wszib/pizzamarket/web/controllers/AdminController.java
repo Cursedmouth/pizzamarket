@@ -10,7 +10,7 @@ import pl.wszib.pizzamarket.data.repositories.OrderRepository;
 import java.util.List;
 
 @Controller
-@RequestMapping("admin")
+@RequestMapping("admin/orders")
 public class AdminController {
 
     private final OrderRepository orderRepository;

@@ -11,8 +11,10 @@
             <tbody>
             <tr th:each="order : ${orders}">
                 <td class="uk-flex uk-flex-column">
-                    <div th:text="${order.id}"></div>
-                    <div class="uk-text-meta"><span th:each=""></span>
+                    <div></div>
+                    <div class="uk-text-bold"><span th:text="${order.orderAddress.firstName + ' ' }"></span><span th:text="${order.orderAddress.lastName}"></span>
+                        <div class="uk-text-meta"><span th:text="${order.orderAddress.street }"></span></div>
+                        <div class="uk-text-meta"><span th:text="${order.orderAddress.postalCode + ' ' }"></span><span th:text="${order.orderAddress.city}"></span></div>
                     </div>
                 </td>
                 <td class="uk-width-1-4">
